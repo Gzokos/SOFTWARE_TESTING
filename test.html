@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cinema Booking App</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    .section { margin-bottom: 20px; }
+    .hidden { display: none; }
+    .seat { padding: 10px; margin: 5px; background: lightgray; display: inline-block; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+
+  <div id="login-section" class="section">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username"><br><br>
+    <input type="password" id="password" placeholder="Password"><br><br>
+    <button id="login-button" onclick="login()">Login</button>
+  </div>
+
+
+  <div id="movie-section" class="section hidden">
+    <h2>Select Movie</h2>
+    <div id="movie-inception" onclick="selectMovie()">Inception</div>
+  </div>
+
+  <div id="showtime-section" class="section hidden">
+    <h2>Select Showtime</h2>
+    <button onclick="selectShowtime()">6:00 PM</button>
+  </div>
+
+
+  <div id="seat-section" class="section hidden">
+    <h2>Select Seat</h2>
+    <div class="seat" id="seat-B4" onclick="selectSeat()">Seat B4</div>
+  </div>
+
+
+  <div id="confirm-section" class="section hidden">
+    <button id="confirm-booking" onclick="confirmBooking()">Confirm Booking</button>
+  </div>
+
+
+  <div id="confirmation-message" class="section hidden">
+    <h3>Booking confirmed for Inception at 6:00 PM, Seat B4!</h3>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      if (username === "testuser" && password === "Test@123") {
+        document.getElementById("login-section").classList.add("hidden");
+        document.getElementById("movie-section").classList.remove("hidden");
+      } else {
+        alert("Invalid credentials");
+      }
+    }
+
+    function selectMovie() {
+      document.getElementById("movie-section").classList.add("hidden");
+      document.getElementById("showtime-section").classList.remove("hidden");
+    }
+
+    function selectShowtime() {
+      document.getElementById("showtime-section").classList.add("hidden");
+      document.getElementById("seat-section").classList.remove("hidden");
+    }
+
+    function selectSeat() {
+      document.getElementById("seat-section").classList.add("hidden");
+      document.getElementById("confirm-section").classList.remove("hidden");
+    }
+
+    function confirmBooking() {
+      document.getElementById("confirm-section").classList.add("hidden");
+      document.getElementById("confirmation-message").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
