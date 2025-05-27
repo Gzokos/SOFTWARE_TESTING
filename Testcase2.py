@@ -27,7 +27,7 @@ else:
  
     driver = webdriver.Chrome()
     try:
-        driver.get("file:///C:/Users/gzoko/essay/test.html")  
+        driver.get("file:///C:/Users/gzoko/essay/test2.html")  
         driver.maximize_window()
         time.sleep(1)
 

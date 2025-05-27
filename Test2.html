@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <title>Cinema Booking App</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 30px; }
-    .section { margin-bottom: 20px; }
+    body { font-family: Arial; margin: 40px; }
     .hidden { display: none; }
-    .seat { padding: 10px; margin: 5px; background: lightgray; display: inline-block; cursor: pointer; }
+    .seat { padding: 10px; margin: 5px; background: #ccc; display: inline-block; cursor: pointer; }
+    button { margin-top: 10px; }
   </style>
 </head>
 <body>
 
-
-  <div id="login-section" class="section">
+  <div id="login-section">
     <h2>Login</h2>
     <input type="text" id="username" placeholder="Username"><br><br>
     <input type="password" id="password" placeholder="Password"><br><br>
@@ -21,29 +20,29 @@
   </div>
 
 
-  <div id="movie-section" class="section hidden">
-    <h2>Select Movie</h2>
+  <div id="movie-section" class="hidden">
+    <h2>Select a Movie</h2>
     <div id="movie-inception" onclick="selectMovie()">Inception</div>
   </div>
 
-  <div id="showtime-section" class="section hidden">
+
+  <div id="showtime-section" class="hidden">
     <h2>Select Showtime</h2>
     <button onclick="selectShowtime()">6:00 PM</button>
   </div>
 
-
-  <div id="seat-section" class="section hidden">
+  <div id="seat-section" class="hidden">
     <h2>Select Seat</h2>
     <div class="seat" id="seat-B4" onclick="selectSeat()">Seat B4</div>
   </div>
 
 
-  <div id="confirm-section" class="section hidden">
+  <div id="confirm-section" class="hidden">
     <button id="confirm-booking" onclick="confirmBooking()">Confirm Booking</button>
   </div>
 
 
-  <div id="confirmation-message" class="section hidden">
+  <div id="confirmation-message" class="hidden">
     <h3>Booking confirmed for Inception at 6:00 PM, Seat B4!</h3>
   </div>
 
@@ -79,5 +78,6 @@
       document.getElementById("confirmation-message").classList.remove("hidden");
     }
   </script>
+
 </body>
 </html>
